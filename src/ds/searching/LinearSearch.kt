@@ -34,7 +34,7 @@ class LinearSearch {
     fun searchFromBothEnds(itemArray: IntArray, element: Int): Int {
         var startIndex = 0
         var endIndex = itemArray.size - 1
-        while (startIndex <= itemArray.size / 2) {
+        while (startIndex <= endIndex) {
             if (itemArray[startIndex] == element)
                 return startIndex
             else if (itemArray[endIndex] == element)
