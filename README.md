@@ -1,2 +1,2 @@
 # ds-algo-kotlin
-Data structure and algorithm programs in Kotlin. Learn how to write code in Kotlin. 
+Data structure and algorithm programs in Kotlin with explanation and time complexity. 
