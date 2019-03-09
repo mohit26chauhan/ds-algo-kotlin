@@ -6,7 +6,7 @@ class BubbleSort {
 
     /**
      * Putting highest item in array at end in every iteration of inner loop
-     * Bubble Sort - Like a water bubble rises up to the top of water surface.
+     * Bubble Sort - Like a water bubble rises up to the top of water surface
      *
      * (index + 1) in inner loop - because we are comparing current item with next item
      *
