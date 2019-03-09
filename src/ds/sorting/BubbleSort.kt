@@ -39,19 +39,32 @@ class BubbleSort {
      * remaining one item is the smallest
      */
     fun sortUsingRecursion(itemArray: IntArray, size: Int) {
+        println(Arrays.toString(itemArray))
         if (size == 1)
             return
 
-        var swapped = false
-        for (index in 0 until size - 1) {
-            if (itemArray[index] > itemArray[index + 1]) {
-                swapped = true
-                swap(itemArray, index, index + 1)
-            }
+        val swapped = swapUsingRecursion(itemArray, 0, false)
+//        for (index in 0 until size - 1) {
+//            if (itemArray[index] > itemArray[index + 1]) {
+//                swapped = true
+//                swap(itemArray, index, index + 1)
+//            }
+//        }
+
+        sortUsingRecursion(itemArray, if (swapped) size - 1 else 1)
+    }
+
+    private fun swapUsingRecursion(itemArray: IntArray, index: Int, swapped: Boolean): Boolean {
+        if (index >= itemArray.size - 1)
+            return swapped
+
+        var swap = false
+        if (itemArray[index] > itemArray[index + 1]) {
+            swap = true
+            swap(itemArray, index, index + 1)
         }
 
-        println(Arrays.toString(itemArray))
-        sortUsingRecursion(itemArray, if (swapped) size - 1 else 1)
+        return swapUsingRecursion(itemArray, index + 1, if (swapped) swapped else swap)
     }
 
     private fun swap(itemArray: IntArray, index1: Int, index2: Int) {
