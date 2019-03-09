@@ -1,2 +1,4 @@
 # ds-algo-kotlin
-Data structure and algorithm programs in Kotlin with explanation and time complexity. 
+Data structure and algorithm programs in Kotlin with explanation and time complexity.
+
+All files are independent of each other. You don't need full project to learn single Algorithm.
