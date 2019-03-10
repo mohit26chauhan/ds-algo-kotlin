@@ -30,6 +30,26 @@ class InsertionSort {
         }
     }
 
+    /**
+     * This function sorts the array in descending order using recursion
+     */
+    fun sortUsingRecursion(itemArray: IntArray, lastIndex: Int) {
+        if (lastIndex < 0)
+            return
+
+        swapUsingRecursion(itemArray, lastIndex)
+        println(Arrays.toString(itemArray))
+        sortUsingRecursion(itemArray, lastIndex - 1)
+    }
+
+    private fun swapUsingRecursion(itemArray: IntArray, lastIndex: Int) {
+        if (lastIndex == itemArray.size - 1 || itemArray[lastIndex] > itemArray[lastIndex + 1])
+            return
+
+        swap(itemArray, lastIndex, lastIndex + 1)
+        swapUsingRecursion(itemArray, lastIndex + 1)
+    }
+
     private fun swap(itemArray: IntArray, index1: Int, index2: Int) {
         itemArray[index1] = itemArray[index1] + itemArray[index2]
         itemArray[index2] = itemArray[index1] - itemArray[index2]
@@ -40,4 +60,5 @@ class InsertionSort {
 fun main(args: Array<String>) {
     val itemArray = intArrayOf(6, 5, 1, 2, 4, 3)
     InsertionSort().sort(itemArray)
+    InsertionSort().sortUsingRecursion(itemArray, itemArray.size - 2)
 }
